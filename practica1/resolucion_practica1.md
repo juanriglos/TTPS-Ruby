@@ -48,3 +48,18 @@ Este comando de guardado rápido (stashing) toma el estado del espacio de trabaj
 
 ####7) Creá un archivo de texto en el repositorio que clonaste en el ejercicio 5 y verificá el estado de tu espacio de trabajo con el subcomando status . ¿En qué estado está el archivo que agregaste?
 Untracked files
+
+####8) Utilizá el subcomando log para ver los commits que se han hecho en el repositorio, tomá cualquierade ellos y copiá su hash (por ejemplo, 800dcba6c8bb2881d90dd39c285a81eabee5effa ), y luego utilizá el subcomando checkout para viajar en el tiempo (apuntar tu copia local) a ese commit. ¿Qué commits muestra ahora git log ? ¿Qué ocurrió con los commits que no aparecen? ¿Qué dice el subcomando status ?
+Cuando me paro en otro log, los de arriban desaparecen, si hago git checkout master vuelve al ultimo, es buena costumbre hacer siempre git pull. Los commits q muestra despues git log, son todos hasta el, el va hacer el ultimo git log lo q estaba despues desaparece.
+
+####9) Volvé al último commit de la rama principal ( master ) usando nuevamente el subcomando checkout . Corroborá que efectivamente haya ocurrido esto.
+Esto es lo q dije arriba
+
+####10)Creá un directorio vacío en el raiz del proyecto clonado. ¿En qué estado aparece en el git status ? ¿Por qué?
+No aparece, porque git se fija en la diferencia de caracteres y un directorio es una carpeta.
+
+####11)Creá un archivo vacío dentro del directorio que creaste en el ejercicio anterior y volvé a ejecutar el subcomando status . ¿Qué ocurre ahora? ¿Por qué?
+ahi si me aparece la carpeta y el archivo. Porque los archivos pueden tener codigo adentro?
+
+####12) Utilizá el subcomando clean para eliminar los archivos no versionados (untracked) y luego ejecutá git status . ¿Qué información muestra ahora?
+me removio el arhcivo q estaba dentro del directorio q cree, pero cuando hago git status, me sigue q el directorio esta untracked.
