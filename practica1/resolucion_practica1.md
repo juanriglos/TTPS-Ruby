@@ -63,3 +63,108 @@ ahi si me aparece la carpeta y el archivo. Porque los archivos pueden tener codi
 
 ####12) Utilizá el subcomando clean para eliminar los archivos no versionados (untracked) y luego ejecutá git status . ¿Qué información muestra ahora?
 me removio el arhcivo q estaba dentro del directorio q cree, pero cuando hago git status, me sigue q el directorio esta untracked.
+
+* * *
+
+#Ruby
+
+####1) Investigá y probá en un intérprete de Ruby cómo crear objetos de los siguientes tipos básicos usando
+literales y usando el constructor new (cuando sea posible):
+1. Arreglo ( Array )
+2. Diccionario o hash ( Hash )
+3. String ( String )
+4. Símbolo ( Symbol )
+
+Un arreglo. 
+literal:
+ary = [1, "two", 3.0] #=> [1, "two", 3.0]
+para evitar tantos strings
+nombres2 = %w{ ann richard william susan pat }
+
+con new:
+ary = Array.new    #=> []
+Array.new(3)       #=> [nil, nil, nil]
+Array.new(3, true) #=> [true, true, true]
+arr.take(3) #=> [1, 2, 3]
+browsers.empty? #=> false
+arr = [1, 2, 3, 4]
+arr.push(5) #=> [1, 2, 3, 4, 5]
+arr << 6    #=> [1, 2, 3, 4, 5, 6]
+http://www.ruby-doc.org/core-2.1.2/Array.html
+
+
+Un hash. 
+A Hash is a dictionary-like collection of unique keys and their values. Also called associative arrays, 
+
+grades = { "Jane Doe" => 10, "Jim Doe" => 6 }
+options = { :font_size => 10, :font_family => "Arial" }
+grades = Hash.new
+grades["Dorothy Doe"] = 9
+books         = {}
+books[:matz]  = "The Ruby Language"
+books[:black] = "The Well-Grounded Rubyist"
+Un string. 
+
+Un símbolo.
+:uno
+:hola
+:-
+
+####2. ¿Qué devuelve la siguiente comparación? ¿Por qué?
+```'TTPS Ruby'.object_id == 'TTPS Ruby'.object_id```
+
+Devuelve falso porque no esta freezado y no es un simbolo. Es un dato dinamico q son como son en ruby, cada vez q lo ejecute me va a dar un object_id <>
+
+####3) Escribí una función llamada reemplazar que reciba un String y que busque y reemplace en el mismo cualquier ocurrencia de { por do\n y cualquier ocurrencia de } por \nend , de modoque convierta los bloques escritos con llaves por bloques multilínea con do y end . Por ejemplo:
+```reemplazar("3.times { |i| puts i }")# => "3.times do\n |i| puts i \nend"```
+
+```def reemplazar(cadena)
+  cadena.gsub(/['{}']/, '{' => "do\n", '}' => 'end')
+end```
+
+
+####4) Escribí una función que convierta a palabras la hora actual, dividiendo en los siguientes rangos los
+minutos:
+Si el minuto está entre 0 y 10, debe decir "en punto",
+si el minuto está entre 11 y 20, debe decir "y cuarto",
+si el minuto está entre 21 y 34, debe decir "y media",
+si el minuto está entre 35 y 44, debe decir "menos veinticinco" (de la hora siguiente),
+Ejercicios
+si el minuto está entre 45 y 55, debe decir "menos cuarto" (de la hora siguiente),
+y si el minuto está entre 56 y 59, debe decir "casi las" (y la hora siguiente)
+Tomá como ejemplos los siguientes casos:
+```
+ A las 10:01
+en_palabras(Time.now)
+ => "Son las 10 en punto"
+ A las 9:33
+en_palabras(Time.now)
+ => "Son las 9 y media"
+ A las 9:45
+en_palabras(Time.now)
+ => "Son las 10 menos cuarto"
+ A las 6:58
+en_palabras(Time.now)
+ => "Casi son las 7"```
+
+
+irb(main):159:0> def en_palabras()
+irb(main):160:1> t = Time.now
+irb(main):161:1> $min = Integer(t.strftime("%M"))
+irb(main):162:1> case $min
+irb(main):163:2> when 0 .. 30
+irb(main):164:2> puts "son y media"
+irb(main):165:2> when 31 .. 60
+irb(main):166:2> puts "correcto"
+irb(main):167:2> else
+irb(main):168:2* puts "wrong"
+irb(main):169:2> end
+irb(main):170:1> end
+=> :en_palabras
+irb(main):171:0> en_palabras
+correcto
+=> nil
+
+
+
+
