@@ -165,6 +165,63 @@ irb(main):171:0> en_palabras
 correcto
 => nil
 
+####5)Escribí una función llamada contar que reciba como parámetro dos string y que retorne la cantidad de veces que aparece el segundo string en el primero, sin importar mayúsculas y minúsculas. Por ejemplo:
+```contar("La casa de la esquina tiene la puerta roja y la ventana blanca.", "la") # => 5```
+
+```irb(main):072:0> def contar (a,b)
+irb(main):073:1> a.split.count(b)
+irb(main):074:1> end
+=> :contar
+irb(main):075:0> contar("la la la", "la")
+=> 3```
+
+####7) Dada una cadena cualquiera, y utilizando los métodos que provee la clase String , realizá las siguientes operaciones sobre el string :
+1. Imprimilo con sus caracteres en orden inverso. ```string.reverse```
+2. Eliminá los espacios en blanco que contenga. ```irb(main):088:0> "asd sda sda sd".gsub(' ', '')
+=> "asdsdasdasd"   o se puede usar el .strip pero quita espacios en blanco del frente y del reverso```
+3. Convertí cada uno de sus caracteres por su correspondiente valor ASCII. ```irb(main):091:0> cadena.each_byte do |c|
+irb(main):092:1* puts c
+irb(main):093:1> end
+108
+97
+32
+108
+97
+32
+108
+111
+99
+97
+32
+108
+97
+=> "la la loca la"```
+4. Cambiá las vocales por números ( a por 4 , e por 3 , i por 1 , o por 0 , u por
+6 ). ```irb(main):100:0> cadena = "abc"
+=> "abc"
+irb(main):101:0> cadena.gsub('a', '4').gsub('b', '5')
+=> "45c"
+irb(main):102:0> cadena.gsub('a', '4').gsub('b', '5').gsub('c','6')
+=> "456"```
+
+####8) ¿Qué hace el siguiente código?
+```irb(main):103:0> [:upcase, :downcase, :capitalize, :swapcase].map do |meth|
+irb(main):104:1*  "TTPS Ruby".send(meth)
+irb(main):105:1> end
+=> ["TTPS RUBY", "ttps ruby", "Ttps ruby", "ttps rUBY"]```
+
+####9) Escribí una función que dado un arreglo que contenga varios string cualesquiera, retorne un nuevo arreglo donde cada elemento es la longitud del string que se encuentra en la misma posición del arreglo recibido como parámetro. Por ejemplo:
+```longitud(['TTPS', 'Opción', 'Ruby', 'Cursada 2015']) # => [4, 6, 4, 12]```
+
+```irb(main):114:0> lenguajes
+=> ["python", "ruby", "java"]
+irb(main):115:0> nuevoArreglo = lenguajes.map{|lenguaje| lenguaje.length}
+=> [6, 4, 4]```
+
+
+####Escribí una función llamada a_ul que reciba un Hash y retorne un String con los pares de clave/valor del hash formateados en una lista HTML <ul> . Por ejemplo:
+```a_ul({ perros: 1, gatos: 1, peces: 0}) # => "<ul><li>perros: 1</li><li>gatos: 1</li><li>peces: 0</li></ul>"```
+
 
 
 
