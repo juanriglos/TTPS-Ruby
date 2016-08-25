@@ -133,7 +133,7 @@ Ejercicios
 si el minuto está entre 45 y 55, debe decir "menos cuarto" (de la hora siguiente),
 y si el minuto está entre 56 y 59, debe decir "casi las" (y la hora siguiente)
 Tomá como ejemplos los siguientes casos:
-```
+
  A las 10:01
 en_palabras(Time.now)
  => "Son las 10 en punto"
@@ -145,9 +145,9 @@ en_palabras(Time.now)
  => "Son las 10 menos cuarto"
  A las 6:58
 en_palabras(Time.now)
- => "Casi son las 7"```
+ => "Casi son las 7"
 
-
+```
 irb(main):159:0> def en_palabras()
 irb(main):160:1> t = Time.now
 irb(main):161:1> $min = Integer(t.strftime("%M"))
@@ -164,7 +164,7 @@ irb(main):170:1> end
 irb(main):171:0> en_palabras
 correcto
 => nil
-
+```
 ####5)Escribí una función llamada contar que reciba como parámetro dos string y que retorne la cantidad de veces que aparece el segundo string en el primero, sin importar mayúsculas y minúsculas. Por ejemplo:
 ```contar("La casa de la esquina tiene la puerta roja y la ventana blanca.", "la") # => 5```
 
