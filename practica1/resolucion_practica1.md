@@ -299,15 +299,16 @@ irb(main):224:0>
 ```
 
 ####15) Investigá qué métodos provee Ruby para:
+```
 1. Conocer la lista de métodos de una clase.
-```Class.methods```
+Class.methods
 2. Conocer la lista de métodos de instancia de una clase.
-```Class.instance_methods```
+Class.instance_methods
 3. Conocer las variables de instancia de una clase.
-```class.instance_variables```
+class.instance_variables
 4. Obtener la lista de ancestros (superclases) de una clase.
-``` class.superclass```
-
+ class.superclass
+```
 
 ####16) Escribí una función que encuentre la suma de todos los números naturales múltiplos de 3 ó 5 menores que un número tope que reciba como parámetro.
 
