@@ -219,9 +219,72 @@ irb(main):115:0> nuevoArreglo = lenguajes.map{|lenguaje| lenguaje.length}
 => [6, 4, 4]```
 
 
-####Escribí una función llamada a_ul que reciba un Hash y retorne un String con los pares de clave/valor del hash formateados en una lista HTML <ul> . Por ejemplo:
+####10) Escribí una función llamada a_ul que reciba un Hash y retorne un String con los pares de clave/valor del hash formateados en una lista HTML <ul> . Por ejemplo:
 ```a_ul({ perros: 1, gatos: 1, peces: 0}) # => "<ul><li>perros: 1</li><li>gatos: 1</li><li>peces: 0</li></ul>"```
 
 
+####11) Escribí una función llamada rot13 que encripte un string recibido como parámetro utilizando el algoritmo ROT13 . Por ejemplo:
+```rot13("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!") # => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"```
 
+```irb(main):125:0> ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+=> "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+irb(main):126:0>
+irb(main):127:0* #generated with .split('').shuffle.join
+irb(main):128:0* ENCODING = "MOhqm0PnycUZeLdK8YvDCgNfb7FJtiHT52BrxoAkas9RWlXpEujSGI64VzQ31w"
+=> "MOhqm0PnycUZeLdK8YvDCgNfb7FJtiHT52BrxoAkas9RWlXpEujSGI64VzQ31w"
+irb(main):129:0>
+irb(main):130:0* def encode(text)
+irb(main):131:1>     return text.tr(ALPHABET, ENCODING)
+irb(main):132:1> end
+=> :encode
+irb(main):133:0>
+irb(main):134:0* def decode(text)
+irb(main):135:1>     return text.tr(ENCODING, ALPHABET)
+irb(main):136:1> end
+=> :decode
+irb(main):137:0> encode (texto)
+=> "MZPd mvhYyDd"
+irb(main):138:0> decode (texto)
+=> "OTvL mPjJDCL"
+irb(main):139:0> decode ("MZPd mvhYyDd")
+=> "algo escrito"```
+
+####12) Escribí una función más genérica, parecida a la del ejercicio anterior, que reciba como parámetro un string y un número n , y que realice una rotación de n lugares de las letras del string y retorne el resultado. Por ejemplo:
+```rot("¡Bienvenidos a la cursada 2015 de TTPS Opción Ruby!", 13) # => "¡Ovrairavqbf n yn phefnqn 2015 qr GGCF Bcpvóa Ehol!"```
+
+####13) Escribí un script en Ruby que le pida al usuario su nombre y lo utilice para saludarlo imprimiendo en pantalla ¡Hola, <nombre>! . Por ejemplo:
+```$ ruby script.rb ```
+```Por favor, ingresá tu nombre:```
+Matz
+```¡Hola, Matz!```
+
+```irb(main):181:0> def llamar
+irb(main):182:1> puts "Por favor, ingresa tu nombre:"
+irb(main):183:1> a = gets.chomp
+irb(main):184:1> puts "Hola " + a
+irb(main):185:1> end
+=> :llamar
+irb(main):186:0> llamar
+Por favor, ingresa tu nombre:
+juan
+Hola juan
+=> nil```
+
+####14) Dado un color expresado en notación RGB, debés calcular su representación entera y hexadecimal, donde la notación entera se define como red + green*256 + blue*256*256 y la hexadecimal como el resultado de expresar en hexadecimal el valor de cada color y concatenarlos en orden. Por ejemplo:
+```
+notacion_hexadecimal([0, 128, 255])
+# => '#0080FF' 
+notacion_entera([0, 128, 255]) 
+# => 16744448 
+```
+####15) Investigá qué métodos provee Ruby para:
+1. Conocer la lista de métodos de una clase.
+2. Conocer la lista de métodos de instancia de una clase.
+3. Conocer las variables de instancia de una clase.
+4. Obtener la lista de ancestros (superclases) de una clase.
+
+
+####16) Escribí una función que encuentre la suma de todos los números naturales múltiplos de 3 ó 5 menores que un número tope que reciba como parámetro.
+
+####17) Cada nuevo término en la secuencia de Fibonacci es generado sumando los 2 términos anteriores. Los primeros 10 términos son: 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 . Considerando los términos en la secuencia de Fibonacci cuyos valores no exceden los 4 millones, encontrá la suma de los términos pares.
 
