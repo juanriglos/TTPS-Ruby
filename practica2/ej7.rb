@@ -1,5 +1,3 @@
-
-
 # Tira un dado virtual de 6 caras
 def tirar_dado
  rand 1..6
@@ -9,23 +7,23 @@ end
 # Si no se recibe la cantidad de casilleros, aprovecho el valor por defecto para
 #ese parámetro para evitar tener que
 # llamar a #tirar_dado dentro del cuerpo del método.
-def mover_ficha(fichas, jugador, casilleros)
- fichas[:jugador] += casilleros
- if fichas[:jugador] > 40
+def mover_ficha(fichas, jugador, casilleros = tirar_dado)
+ fichas[jugador] += casilleros
+ if fichas[jugador] > 40
  puts "Ganó #{jugador}!!"
  true
  else
- puts "#{jugador} ahora está en el casillero #{fichas[:jugador]}"
+ puts "#{jugador} ahora está en el casillero #{fichas[jugador]}"
  fichas[jugador]
  end
 end
 posiciones = { azul: 0, rojo: 0, verde: 0 }
 finalizado = false
 until finalizado
- ['azul', 'rojo', 'verde'].shuffle.each do |jugador|
- mover_ficha(posiciones, jugador, tirar_dado)
+ [:azul, :rojo, :verde].shuffle.each do |jugador|
+ finalizado = mover_ficha(posiciones, jugador)
  end
 end
 
-#1) a la lina finalizado = mover_ficha le falta un parametro, ahi le agregue tirar_dado
-#2) al metodo mover_ficha no puedo hacer fichas[jugador] a un hash tengo q acceder con ":"
+
+#error cambiar los string 'azul', etc por :azul , etc
