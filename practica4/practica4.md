@@ -15,4 +15,4 @@ Como dijimos las gemas son paquetes; incluyen código, documentación y un gemsp
 * Archivo **README**: contiene cierta documentación introductoria: cómo instalar, dependencias, cómo usar, etc.
 Documentación mas específica suele incluirse directamente en el código
 * Archivo **Rakefile**: no es obligatorio; contiene instrucciones utilizadas por la gema Rake para automatizar y realizar tareas. Rake es una implementación en ruby de Make.
-* **gemspec**: contiene información sobre la gema: nombre, versión, licencias, autores, archivos. Se expresa en código ruby, mediante la clase `Gem::Specification`. La información que se puede configurar se documenta en las guías de rubygems [specification-reference]. Puede ser un archivo en la raiz o incluirse en el Rakefile.
+* **gemspec**: contiene información sobre la gema: nombre, versión, licencias, autores, archivos. Se expresa en código ruby, mediante la clase `Gem::Specification`. La información que se puede configurar se documenta en las guías de rubygems [specification-reference](). Puede ser un archivo en la raiz o incluirse en el Rakefile.
